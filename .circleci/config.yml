@@ -1,0 +1,17 @@
+version: 2.1
+
+jobs:
+  build_and_test:
+    docker:
+      - image: circleci/openjdk:17
+    steps:
+      - checkout # Check out the source code
+      - run:
+          name: Build and Run Tests
+          command: mvn clean install
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build_and_test
