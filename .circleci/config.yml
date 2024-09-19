@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build_and_test:
     docker:
-      - image: circleci/openjdk:17
+      - image: cimg/openjdk:17.0.3
     steps:
       - checkout # Check out the source code
       - run:
